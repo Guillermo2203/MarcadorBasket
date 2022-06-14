@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="mainViewModel"
+            type="com.pruebas.marcadorbasket.MainViewModel" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/local_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="32dp"
+            android:text="Local"
+            android:textSize="40sp" />
+
+        <TextView
+            android:id="@+id/visitor_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="Visitante"
+            android:layout_marginBottom="32dp"
+            android:textSize="40sp" />
+
+        <TextView
+            android:id="@+id/local_score_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/local_text"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:text="0"
+            android:textSize="40sp" />
+
+        <TextView
+            android:id="@+id/visitor_score_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/visitor_text"
+            android:layout_centerHorizontal="true"
+            android:text="0"
+            android:layout_marginBottom="40dp"
+            android:textSize="40sp" />
+
+        <Button
+            android:id="@+id/minus_local_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="132dp"
+            android:onClick="@{() -> mainViewModel.minus1Points(true)}"
+            android:text="@string/minus_1" />
+
+        <Button
+            android:id="@+id/plus1_local_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="100dp"
+            android:layout_marginRight="24dp"
+            android:onClick="@{() -> mainViewModel.addPointsToScore(1,true)}"
+            android:text="@string/plus_1" />
+
+        <Button
+            android:id="@+id/plus2_local_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/plus1_local_button"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="24dp"
+            android:onClick="@{() -> mainViewModel.addPointsToScore(2,true)}"
+            android:text="@string/plus_2" />
+
+        <Button
+            android:id="@+id/minus1_visitor_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="24dp"
+            android:layout_marginBottom="132dp"
+            android:onClick="@{() -> mainViewModel.minus1Points(false)}"
+            android:text="@string/minus_1" />
+
+        <Button
+            android:id="@+id/plus1_visitor_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/final_score_button"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="138dp"
+            android:layout_marginRight="24dp"
+            android:onClick="@{() -> mainViewModel.addPointsToScore(1,false)}"
+            android:text="@string/plus_1" />
+
+        <Button
+            android:id="@+id/plus2_visitor_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/plus1_visitor_button"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="24dp"
+            android:onClick="@{() -> mainViewModel.addPointsToScore(2,false)}"
+            android:text="@string/plus_2" />
+
+        <Button
+            android:id="@+id/reset_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="24dp"
+            android:onClick="@{() -> mainViewModel.resetScore()}"
+            android:text="RESET" />
+
+        <Button
+            android:id="@+id/final_score_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="24dp"
+            android:text=">" />
+
+
+    </RelativeLayout>
+</layout>

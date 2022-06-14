@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name" translatable="false">MarcadorBasket</string>
+    <string name="minus_1">-1</string>
+    <string name="plus_1">+1</string>
+    <string name="plus_2">+2</string>
+    <string name="score_is_0">Score is 0, It can\'t be -1</string>
+    <string name="tie">Tie</string>
+    <string name="local_wins">Local Wins</string>
+    <string name="visitor_wins">Visitor Wins</string>
+</resources>
